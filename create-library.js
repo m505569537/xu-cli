@@ -14,8 +14,8 @@ module.exports = ({ info }) => {
         case 'next-app':
             target = 'm505569537/next-app-template'
             break;
-        case 'ts-app':
-            target = 'm505569537/first-test'
+        case 'ts-project':
+            target = 'm505569537/ts-template'
             break;
         default:
             target = 'm505569537/test-web'
