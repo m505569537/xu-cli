@@ -4,6 +4,7 @@ const download = require('download-git-repo')
 const handlebars = require('handlebars')
 const symbols = require('log-symbols')
 const chalk = require('chalk')
+const cp = require('child_process')
 
 module.exports = ({ info }) => {
     // 创建文件，下载模版，并修改模版内容
@@ -43,6 +44,17 @@ module.exports = ({ info }) => {
                   })
                 }
                 console.log(symbols.success, chalk.green("项目初始化完成"));
+                const installSpinner = ora('正在下载依赖...');
+                installSpinner.start();
+                cp.exec(`cd ${info.name} && npm i`, (err) => {
+                  if(!err) {
+                    installSpinner.succeed()
+                    console.log(symbols.success, chalk.green('依赖下载完成，项目构建结束'));
+                  } else {
+                    installSpinner.fail()
+                    console.log(symbols.error, chalk.red('依赖下载失败，请尝试手动下载依赖'));
+                  }
+                })
               } else {
                 spinner.fail();
                 console.log(symbols.error, chalk.red(`拉取远程仓库失败${err}`));
