@@ -10,7 +10,7 @@
 + 实现各种模版
   + [x] next-app-template
   + [x] ts-template
-  + [ ] react-app
+  + [x] react-app
 
 + 完善各个模版中初始页的结构，内容
 + 下载模版时候的进度条
