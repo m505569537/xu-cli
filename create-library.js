@@ -22,7 +22,7 @@ module.exports = ({ info }) => {
             target = 'm505569537/react-template'
             break;
         default:
-            target = 'm505569537/test-web'
+            target = 'm505569537/react-template'
             break;
     }
     download(
