@@ -18,6 +18,9 @@ module.exports = ({ info }) => {
         case 'ts-project':
             target = 'm505569537/ts-template'
             break;
+        case 'react-app':
+            target = 'm505569537/react-template'
+            break;
         default:
             target = 'm505569537/test-web'
             break;
