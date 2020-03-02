@@ -21,6 +21,9 @@ module.exports = ({ info }) => {
         case 'react-app':
             target = 'm505569537/react-template'
             break;
+        case 'nw-app':
+            target = 'm505569537/nw-templete'
+            break;
         default:
             target = 'm505569537/react-template'
             break;
@@ -40,6 +43,9 @@ module.exports = ({ info }) => {
                     _data.name = info.name
                     _data.description = info.description
                     _data.author = info.author
+                    if(target == 'm505569537/nw-templete') {
+                      _data.scripts.start = `cd ../nwjs-sdk && nwjs.app/Contents/MacOS/nwjs ../${info.name}`
+                    }
                     let str = JSON.stringify(_data, null, 4);
                     fs.writeFile(`${info.name}/package.json`, str, function (err) {
                       if (err) throw err;

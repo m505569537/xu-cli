@@ -26,7 +26,7 @@ module.exports = async (opts) => {
             type: 'list',
             name: 'template',
             message: '请选择模版类型',
-            choices: ['next-app', 'ts-project', 'react-app'],
+            choices: ['next-app', 'ts-project', 'react-app', 'nw-app'],
             default: opts.template
         }
     ]
